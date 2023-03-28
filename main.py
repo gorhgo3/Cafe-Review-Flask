@@ -25,26 +25,6 @@ class CafeForm(FlaskForm):
     submit = wtforms.SubmitField('Save')
 
 
-
-
-# Exercise:
-# add: Location URL, open time, closing time, coffee rating, wifi rating, power outlet rating fields
-# make coffee/wifi/power a select element with choice of 0 to 5.
-# e.g. You could use emojis ☕️/💪/✘/🔌
-# make all fields required except submit
-# use a validator to check that the URL field has a URL entered.
-
-
-
-
-# Cafe Name,Location,Open,Close,Coffee,Wifi,Power
-# Lighthaus,https://goo.gl/maps/2EvhB4oq4gyUXKXx9,11AM, 3:30PM,☕☕☕☕️,💪💪,🔌🔌🔌
-# Esters,https://goo.gl/maps/13Tjc36HuPWLELaSA,8AM,3PM,☕☕☕☕,💪💪💪,🔌
-# Ginger & White,https://goo.gl/maps/DqMx2g5LiAqv3pJQ9,7:30AM,5:30PM,☕☕☕,✘,🔌
-# Mare Street Market,https://goo.gl/maps/ALR8iBiNN6tVfuAA8,8AM,1PM,☕☕,💪💪💪,🔌🔌🔌
-
-
-
 # NEED TO INCLUDE A HOME RENDER
 @app.route("/")
 def home():
@@ -70,7 +50,7 @@ def cafes():
         list_of_rows = []
         for row in csv_data:
             list_of_rows.append(row)
-    return render_template('home.html', cafes=list_of_rows)
+    return render_template('cafes.html', cafes=list_of_rows)
 
 
 if __name__ == '__main__':
